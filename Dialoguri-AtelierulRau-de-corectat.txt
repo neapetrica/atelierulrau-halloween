@@ -1,0 +1,465 @@
+﻿ATELIERULRĂU.RO — DIALOGURI PENTRU CORECTURĂ
+Versiunea extrasă: 22 octombrie 2026
+
+CUM COMPLETEZI
+• Modifică direct textul de sub „TEXT DE EDITAT”. Este completat cu replica actuală.
+• Păstrează ID-urile [EUGEN_01] etc., ca să pot identifica exact ce implementez.
+• Nu trebuie să adaugi „Eugen:” sau alt nume la început: jocul îl adaugă automat.
+• Păstrează {atingere} și {secunde}: jocul le înlocuiește cu numere.
+• Scrie cererile despre mecanici la „OBSERVAȚII”, separat de replică.
+• Dacă nu modifici un text, acesta rămâne neschimbat. Nu schimba efectele decât dacă dorești explicit alt gameplay.
+• Pentru eliminarea unei replici, scrie [ELIMINĂ] la observații și precizează comportamentul dorit.
+
+Toate replicile active din ferestrele NPC sunt în secțiunea A. Secțiunea B include mesajele scurte legate de personaje. Secțiunea C conține povestea și finalurile. Secțiunea D este cod vechi, INACTIV, inclus separat pentru transparență.
+Textele tehnice ale HUD-ului și etichetele butoanelor nu sunt dialoguri și nu sunt incluse aici.
+
+============================================================
+A. REPLICI ACTIVE — PERSONAJE
+============================================================
+
+[EUGEN_01] Eugen
+APARE: Întâlnirea 1; inclusiv când Sebi este prezent.
+EFECT ACTUAL: Nicio pierdere de buget.
+TEXT DE EDITAT:
+Am observat că te uiți la scule... Ia spune-mi, ce proiecte ai în plan? Te ascult.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[EUGEN_02] Eugen
+APARE: Întâlnirea 2; inclusiv când Sebi este prezent.
+EFECT ACTUAL: Nicio pierdere de buget.
+TEXT DE EDITAT:
+Am analizat proiectul tău! Știu că voiai o singură sculă, dar îți recomand tot raftul Bosch!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[EUGEN_03] Eugen
+APARE: Întâlnirea 3; inclusiv când Sebi este prezent.
+EFECT ACTUAL: Buget instant 0%; GAME OVER.
+TEXT DE EDITAT:
+Gata! Ți-am pregătit comanda ideală cu tot ce ai nevoie și ce nu ai nevoie! Bifează factura!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MADA_01] Mada
+APARE: Primele două întâlniri normale.
+EFECT ACTUAL: +10% buget, maximum 100%. Ocazia este consumată și dacă bugetul este deja 100%.
+TEXT DE EDITAT:
+Facem un TikTok rapid?
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MADA_02] Mada
+APARE: De la a treia întâlnire normală.
+EFECT ACTUAL: Activează cupon pentru o achiziție de minimum jumătate din bugetul rămas. Nu se aplică atacurilor fixe Vlad/Andrei; la Festool reducerea efectivă este 0.
+TEXT DE EDITAT:
+De data asta îți dau reducere doar dacă faci o achiziție de minim 50% din bugetul rămas!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[VLAD_01] Vlad
+APARE: La o atingere validă, inclusiv în timpul evenimentului Sebi.
+EFECT ACTUAL: −25 puncte de buget și un produs nedorit. La a patra atingere CUMULATĂ Vlad + Andrei, bugetul devine 0 indiferent de retururi.
+TEXT DE EDITAT:
+Nu pleci fără pachetul de scule premium! +1 Sculă adăugată (-25% Buget)! Comanda {atingere}/4.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ANDREI_01] Andrei
+APARE: La o atingere validă, inclusiv în timpul evenimentului Sebi.
+EFECT ACTUAL: −25 puncte de buget și un produs nedorit. La a patra atingere CUMULATĂ Vlad + Andrei, bugetul devine 0 indiferent de retururi.
+TEXT DE EDITAT:
+Nu pleci fără pachetul de scule premium! +1 Sculă adăugată (-25% Buget)! Comanda {atingere}/4.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MIHAI_01] Mihai
+APARE: Ultima achiziție are cel mult 30s, nu a fost returnată și returul nu este în cooldown.
+EFECT ACTUAL: Restituie ultima pierdere, plafon 100%; marchează produsul returnat; cooldown 14s.
+TEXT DE EDITAT:
+Ai cumpărat ceva în ultimele? La noi returul e simplu și rapid, îți dau banii înapoi!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MIHAI_02] Mihai
+APARE: În cele 14s după un retur.
+EFECT ACTUAL: Informare, fără modificarea bugetului.
+TEXT DE EDITAT:
+Returul precedent este procesat. Revin în {secunde} secunde!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MIHAI_03] Mihai
+APARE: Nu există o achiziție returnabilă în ultimele 30s.
+EFECT ACTUAL: Fără retur sau modificarea bugetului.
+TEXT DE EDITAT:
+Pot accepta ultima achiziție doar în maximum 30 de secunde. Ai o factura?
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_SALUT_01] Elena
+APARE: Salutul 1 dintr-un ciclu de 3, înainte de facturare.
+EFECT ACTUAL: Fără modificarea bugetului.
+TEXT DE EDITAT:
+Spor la cumpărături!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_SALUT_02] Elena
+APARE: Salutul 2 dintr-un ciclu de 3, înainte de facturare.
+EFECT ACTUAL: Fără modificarea bugetului.
+TEXT DE EDITAT:
+Bine ai venit! Pentru a inregistra o comanda mergeti la colegii mei.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_SALUT_03] Elena
+APARE: Salutul 3 dintr-un ciclu de 3, înainte de facturare.
+EFECT ACTUAL: Fără modificarea bugetului.
+TEXT DE EDITAT:
+Când ești pregătit, treci pe la mine pentru factură.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_FACTURA] Elena
+APARE: 3/3 scule, buget pozitiv și jucătorul în zona recepției.
+EFECT ACTUAL: Emite factura și deblochează ieșirea.
+TEXT DE EDITAT:
+Factura ta este gata! Ai supraviețuit la Atelierul Rău și pleci acasă echipat ca un profesionist!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_DUPA_FACTURA] Elena
+APARE: Revenire la recepție după facturare.
+EFECT ACTUAL: Confirmă că ieșirea este deblocată.
+TEXT DE EDITAT:
+Factura este eliberată. Va mai asteptam!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[BOGDAN_01] Bogdan
+APARE: Boss-ul aleator atinge jucătorul.
+EFECT ACTUAL: Dialog minimum 3s, apoi pierdere de bază 15% × eveniment; Festool: 33%. Bogdan a preluat vechiul rol al lui Sebi.
+TEXT DE EDITAT:
+Știai că AtelierulTău.ro este de 16 ani pe piață, are cele mai bune servicii și îmbunătățim constant experiența clienților?
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MADA_SEBI] Mada
+APARE: Sebi traversează showroom-ul. Pentru Elena nu înlocuiește etapa de checkout.
+EFECT ACTUAL: Vânzare de bază 5% × eveniment; Festool: 33%. Înlocuiește temporar bonusul/returul/salutul normal.
+TEXT DE EDITAT:
+Vine șeful! Îți pun și acest accesoriu în coș — oferta mea fulger!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MIHAI_SEBI] Mihai
+APARE: Sebi traversează showroom-ul. Pentru Elena nu înlocuiește etapa de checkout.
+EFECT ACTUAL: Vânzare de bază 5% × eveniment; Festool: 33%. Înlocuiește temporar bonusul/returul/salutul normal.
+TEXT DE EDITAT:
+Vine șeful! Îți pun și acest accesoriu în coș — oferta mea fulger!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_SEBI] Elena
+APARE: Sebi traversează showroom-ul. Pentru Elena nu înlocuiește etapa de checkout.
+EFECT ACTUAL: Vânzare de bază 5% × eveniment; Festool: 33%. Înlocuiește temporar bonusul/returul/salutul normal.
+TEXT DE EDITAT:
+Vine șeful! Îți pun și acest accesoriu în coș — oferta mea fulger!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+SEBI — NOTĂ
+Sebi nu are acum o fereastră de dialog proprie. Traversează showroom-ul în aproximativ 5 secunde active, declanșând urmărirea de către angajați. Pentru a-i adăuga o replică, scrie propunerea și momentul dorit aici.
+PROPUNERE / OBSERVAȚII:
+
+
+
+============================================================
+B. MESAJE SCURTE LEGATE DE PERSONAJE
+============================================================
+
+[SEBI_APARITIE] Sistem
+APARE: La apariția lui Sebi.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+SEBI, ȘEFUL DE MAGAZIN! TOȚI VIN CU OFERTE!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[SEBI_PLECARE] Sistem
+APARE: La sfârșitul traversării.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+SEBI A PLECAT · ANGAJAȚII REVIN LA POSTURI
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[SEBI_HARTA] Sistem
+APARE: Etichetă pe hartă în timpul traversării.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+SEBI · OFERTE FULGER!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[BOGDAN_APARITIE] Sistem
+APARE: Anunțul de apariție al lui Bogdan; regiune de accesibilitate.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+BOGDAN A APĂRUT LA UȘA DIN DREAPTA-SUS!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[CUPON_ACTIVAT] Angajatul care vinde
+APARE: Bulă când se aplică efectiv cuponul Madei.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+Coupon activat : −10% la achiziție!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[MADA_BUGET_MAXIM] Sistem
+APARE: Promo folosită când bugetul este deja 100%.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+BUGET DEJA LA 100% · PROMO FOLOSITĂ
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[ELENA_CONFIRMAT] Sistem
+APARE: După acceptarea dialogului de facturare; regiune de accesibilitate.
+EFECT ACTUAL: Mesaj de informare; nu este o replică separată cu pauză.
+TEXT DE EDITAT:
+Plată procesată în joc · factură eliberată. Ieșirea este deblocată!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+
+============================================================
+C. POVESTE ȘI FINALURI — OPȚIONAL DE CORECTAT
+============================================================
+
+[INTRO_1_TITLU] Poveste
+APARE: Slide 1: titlu.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Ești invitat la eveniment!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_1_TEXT] Poveste
+APARE: Slide 1: descriere.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Pe AtelierulTău.ro ai consultanță gratuită, prețuri corecte și scule pentru proiectul tău. Astăzi poți explora evenimentele prin joc: alege cortul preferat și intră la o demonstrație virtuală!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_2_TITLU] Poveste
+APARE: Slide 2: titlu.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Ce vrei să testezi la eveniment?
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_2_TEXT] Poveste
+APARE: Slide 2: descriere.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Echipa te invită în showroom. Alege proiectul: cele trei scule pentru demonstrația ta te așteaptă pe rafturi.
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_3_TITLU] Poveste
+APARE: Slide 3: titlu.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Stai… acesta nu era evenimentul promis!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_3_TEXT] Poveste
+APARE: Slide 3: descriere.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Ușa se închide în urma ta. … De Halloween 2026, demonstrația virtuală devine AtelierulRău.ro! Echipa are o singură misiune: să-ți vândă tot showroom-ul. Poți scăpa cu bugetul rămas?
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_4_TITLU] Poveste
+APARE: Slide 4: titlu.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Proiectul tău, bugetul tău!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INTRO_4_TEXT] Poveste
+APARE: Slide 4: descriere.
+EFECT ACTUAL: Text de prezentare.
+TEXT DE EDITAT:
+Adună 3 scule, păstrează buget pozitiv
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[FINAL_PIERDERE_TITLU] Final
+APARE: Buget 0.
+EFECT ACTUAL: Ecran GAME OVER.
+TEXT DE EDITAT:
+BUGET EPUIZAT!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[FINAL_PIERDERE_TEXT] Final
+APARE: Buget 0.
+EFECT ACTUAL: Ecran GAME OVER.
+TEXT DE EDITAT:
+Echipa AtelierulRău ți-a umplut coșul cu scule! Dar felicitări, ești echipat ca un profesionist!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[FINAL_VICTORIE_TITLU] Final
+APARE: Ieșire cu 3 scule, factură și buget pozitiv.
+EFECT ACTUAL: Ecran victorie.
+TEXT DE EDITAT:
+AI CÂȘTIGAT!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[FINAL_VICTORIE_TEXT] Final
+APARE: Ieșire cu 3 scule, factură și buget pozitiv.
+EFECT ACTUAL: Ecran victorie.
+TEXT DE EDITAT:
+Acum ești un profesionist complet echipat!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+
+============================================================
+D. TEXTE VECHI DIN COD — NU SUNT AFIȘATE ÎN JOC
+============================================================
+Modificarea acestora NU le activează automat. Precizează în observații dacă vrei să înlocuiască o replică activă.
+
+
+[INACTIV_VLAD_01] Vlad
+APARE: NICIODATĂ în fluxul actual.
+EFECT ACTUAL: Text rămas în constanta lines, nefolosit.
+TEXT DE EDITAT:
+Așteaptă! Am găsit un set de accesorii profesionale neapărat necesare pentru tine!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INACTIV_ANDREI_01] Andrei
+APARE: NICIODATĂ în fluxul actual.
+EFECT ACTUAL: Text rămas în constanta lines, nefolosit.
+TEXT DE EDITAT:
+Dacă tot treci pe aici, uită-te și la aceste discuri!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INACTIV_ELENA_01] Elena
+APARE: NICIODATĂ în fluxul actual.
+EFECT ACTUAL: Text rămas în constanta lines, nefolosit.
+TEXT DE EDITAT:
+Bine ai venit la AtelierulRău! Colegii mei de pe culoare abia așteaptă să te ajute cu comanda!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+[INACTIV_ELENA_02] Elena
+APARE: NICIODATĂ în fluxul actual.
+EFECT ACTUAL: Text rămas în constanta lines, nefolosit.
+TEXT DE EDITAT:
+Te aștept la casă să îți dau factura și să preluăm plata!
+
+OBSERVAȚII:
+
+------------------------------------------------------------
+
+
+OBSERVAȚII GENERALE / REPLICI NOI DORITE:
+
+
