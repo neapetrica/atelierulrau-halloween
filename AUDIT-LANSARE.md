@@ -1,25 +1,25 @@
-# Revizuire comercială — 23 octombrie 2026
+# Audit — simulatorul echipei, 28 octombrie 2026
 
-## Modificări implementate
+Versiune jucabilă inițială a simulatorului, cu bonusul Halloween păstrat integral în același fișier. Echilibrarea pentru jucători noi rămâne de validat prin partide reale.
 
-- Texturi raster pixel-art memorate pentru gresie, rafturi, valize, zona WC și mobilier; detalii și culori distincte Bosch, Makita, DeWALT și Festool. Coliziunile mobilierului sunt păstrate.
-- Sprite-uri mai vizibile, accesorii distincte, umbre, neon radial, scule pulsante și lacăt roșu/verde la ieșire.
-- Patru ecrane de intro fullscreen; transformare declanșată o singură dată în centrul showroom-ului, cu logo la opacitate 80%. Efectele respectă preferința de mișcare redusă.
-- Oferte Vlad/Andrei de 25%, produs în coș, Game Over imediat la buget zero și factură obligatorie pentru victorie.
-- Deblocare AudioContext din gestul de start. Muzica se oprește inclusiv în conversațiile clienților; SFX rămân independente.
-- Grila de navigație este reutilizată și invalidată la schimbarea obstacolelor; coada de căutare folosește tablouri reutilizabile. Randarea ecranelor inactive este limitată, iar fila ascunsă nu continuă desenarea.
+## Implementat
 
-## Verificare
+Hartă extinsă showroom + depozit, coliziuni și trasee către toate stațiile, opt personaje, roluri aleatorii fără repetare în grup, 40 de clienți programați pe zi, sarcini cu pași și termene, consecințe asupra recenziilor și economiei, alertă comună sub 4,3★, recuperare, costuri zilnice și raport final. Colegii necontrolați sunt simulați automat; nu este multiplayer.
 
-Au trecut 27 grupe de teste locale (`node qa/game.test.cjs`): poveste, evenimente, proiecte, audio, coliziuni, acces la obiective, cameră touch, oferte, retur, bonusuri, Game Over, checkout, obstacole, DASH, manager, clienți, protecția între interacțiuni și transformarea centrală.
+Fluxurile de depozit, vânzări, support, oferte, achiziții și facturare includ decizii bune și greșeli remediabile. Jucătorul trebuie să finalizeze minimum trei misiuni; activitatea automată nu este suficientă pentru victorie. Sunetul este opțional și se oprește în pauză/dialoguri. Trecerea în fundal pune jocul pe pauză.
 
-Testele simulează DOM, Canvas și Audio. Nu demonstrează 60 FPS, calitatea sunetului auzit sau compatibilitatea cu toate dispozitivele. Fișierul include aproximativ 3,8 MB de cod și ilustrații.
+## Verificări automate
 
-## Acceptare pe dispozitive reale
+14 grupe simulator: acoperirea rolurilor, toate fluxurile, pașii omişi în vânzări, traseele depozitului, media recenziilor, alertă/recuperare/eșec, limite de răspuns, vestiar/deghizare, aprovizionare/preț/fonduri, întârzieri, feedback, zi completă cu 40 de clienți, conectivitatea tuturor destinațiilor și integrarea bonusului.
 
-- Testați un iPhone și un Android, portret și landscape: lizibilitate, touch simultan, sunet după primul tap și revenire din fundal.
-- Verificați 3–5 partide cu jucători noi pentru dificultate și înțelegerea facturii.
-- Confirmați destinațiile CTA ale proiectelor și afirmațiile comerciale înainte de promovarea plătită.
-- Verificați timpul primei încărcări pe internet mobil. Nu există o măsurătoare certificată de FPS sau timp de încărcare.
+27 de grupe existente trec pentru bonusul Halloween. Replica despre Alin Petrea este acum pozitivă: clientul caută oferta personalizată; numele NPC este „Client cu ofertă”.
 
-Referință audio: [MDN — Web Audio best practices](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices).
+## Limite și probe recomandate
+
+- Modelul economic folosește unități de stoc agregate și cost mediu simplificat, nu gestiune contabilă reală.
+- Termenul de 30 de zile, deghizările și suspendările sunt mecanici fictive, nu recomandări profesionale sau juridice.
+- Cele 40 de sosiri au loc dacă ziua continuă; o pierdere anticipată încheie ziua înainte de toate sosirile.
+- Nu există salvare între sesiuni, conturi online sau multiplayer.
+- Testați câte o zi în fiecare rol și reglajul termenelor cu oameni care nu cunosc traseul.
+- Testați pe iPhone/Android: gesturi simultane, redimensionare, sunet, revenire din fundal și revenire din bonus.
+- Nu se garantează 60 FPS pe orice dispozitiv. Fișierul este de aproximativ 3,9 MB, în mare parte ilustrația inclusă în bonus.
