@@ -4,7 +4,16 @@ Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocu
 
 [JOC PUBLIC](https://neapetrica.github.io/atelierulrau-halloween/)
 
-## Jocul principal
+## Tur de criză — modul implicit
+
+- Exact 180 de secunde active: introducere 8s, opt roluri × 19s, recuperare 14s, final cinematic 6s. Pauza și ascunderea paginii opresc timpul.
+- Două decizii per rol, cu selecție tactilă sau tastele 1/2/3; zar procentual cu șanse vizibile de 78/64/48%. Recuperare 82/62/40%.
+- O comandă urgentă traversează aprovizionarea, recepția, vânzarea, telefonul/WhatsApp, coletarea, suportul, escaladarea și factura.
+- Rating inițial 4,70★; reușită +0,055★, eșec −0,30★, timp expirat −0,08★, recuperare +0,30★ sau −0,06★. Câștig la minimum 4,3★ după toate scenele.
+- Calibrare: 10.000 partide cu alegeri mixte 50%/35%/15% și cea mai bună recuperare: 35,28% victorii. Cele mai bune alegeri constant: 68,65%. Acestea sunt simulări, nu garanții pentru jucători.
+- Explorarea liberă și bonusul Client rămân accesibile din meniu.
+
+## Explorare liberă — modul lung
 
 - Opt colegi jucabili: Cristi, George, Vlad, Andrei, Mihai, Eugen, Sebi și Elena. Rolurile sunt atribuite aleatoriu, fără repetare până la epuizarea grupului în sesiunea curentă.
 - O partidă are 8 ture de câte 90 secunde active, cu 5 clienți pe tură (40 în total). Colegii automatizați procesează o parte dintre cereri; jucătorul primește solicitări pe rol.
