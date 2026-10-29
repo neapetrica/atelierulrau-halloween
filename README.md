@@ -7,9 +7,9 @@ Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocu
 ## Jocul principal
 
 - Opt colegi jucabili: Cristi, George, Vlad, Andrei, Mihai, Eugen, Sebi și Elena. Rolurile sunt atribuite aleatoriu, fără repetare până la epuizarea grupului în sesiunea curentă.
-- O zi are 40 de sosiri programate și durează cel mult 8 minute active. Colegii automatizați procesează o parte dintre cereri; jucătorul primește solicitări pe rol.
-- Rezolvă personal minimum trei misiuni, păstrează ratingul de minimum 4,3 din 5 stele și fonduri suficiente pentru costurile zilei.
-- Rating mediu calculat din recenzii. Sub 4,3★: alertă comună și 55 secunde pentru recuperare. Recenziile sunt solicitate doar după rezolvări bune, fără recompense.
+- O partidă are 8 ture de câte 90 secunde active, cu 5 clienți pe tură (40 în total). Colegii automatizați procesează o parte dintre cereri; jucătorul primește solicitări pe rol.
+- Rezolvă personal minimum o misiune pe tură, păstrează ratingul de minimum 4,3 din 5 stele și fonduri suficiente pentru costurile zilei.
+- Rating mediu calculat din recenzii. Sub 4,3★: alertă comună ; în campania scurtă poți recupera și în rolurile următoare. Recenziile sunt solicitate doar după rezolvări bune, fără recompense.
 - Depozit: recepție, numărare, diferențe cu Elena, stocare, căutare cu Mihai, coletare și predare.
 - Vânzări: showroom, telefon, WhatsApp, înregistrarea și transmiterea obligatorie a comenzii.
 - Support: retururi, tichete, găsirea produselor și escaladări. Termenele de 30 de zile sunt comprimate explicit în timpul jocului.
@@ -25,7 +25,7 @@ WASD/săgeți, Shift pentru mers rapid, E pentru acțiune, P/Escape pentru pauz�
 
 Tot jocul, inclusiv bonusul, este în `index.html`; fără build, backend sau biblioteci externe. Copiile și sursele intermediare din `.review/` nu se publică.
 
-Teste locale: `node qa/simulator.test.cjs` și `node qa/game.test.cjs`. 21 grupe pentru simulator și 27 pentru bonus. Testele nu certifică FPS sau compatibilitatea pe toate telefoanele.
+Teste locale: `node qa/simulator.test.cjs` și `node qa/game.test.cjs`. 24 grupe pentru simulator și 27 pentru bonus. Testele nu certifică FPS sau compatibilitatea pe toate telefoanele.
 
 Simulare fictivă pentru divertisment. Nu reprezintă termene legale, politici comerciale, evaluări reale ale angajaților sau promisiuni de preț. Nu oferă premii/vouchere, nu contactează clienți și nu colectează date personale.
 
@@ -38,3 +38,8 @@ Prima misiune se învață fără cronometru sau sosiri de clienți. Obiectivul 
 ## Comenzi, personalități și recuperare
 
 Clienții grăbiți, nehotărâți și profesioniști au indicatoare distincte, cerințe explicite și răbdare diferită. Numărul și culoarea comenzii o urmăresc la punctul de lucru; comenzile colegilor trec vizual prin înregistrare, colectare, ambalare și facturare. O comandă incompletă eligibilă deschide o singură misiune de recuperare de 40 de secunde: completare cu Mihai, apoi predare clientului. Expirarea sau renunțarea închid cazul fără bucle.
+
+
+## Partidă cu zar — 29 octombrie 2026
+
+Interfața pornește 8 ture × 90 secunde active, 5 clienți/tură, cu rating și fonduri păstrate. Tutorialul inițial și dialogurile se adaugă duratei. Zarul alege prima variantă cu probabilitatea 4/6, iar celelalte două fețe aleg uniform dintre alternative. Rezultatul este confirmat explicit; remedierea rămâne manuală. 12% dintre clienți au așteptări foarte ridicate și cel mult 3,8 stele pentru rezolvare, fapt explicat în dialog. Validare: 24 grupe simulator și 27 bonus.

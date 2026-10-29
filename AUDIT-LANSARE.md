@@ -33,3 +33,8 @@ Prima misiune se învață fără cronometru sau sosiri de clienți. Obiectivul 
 ## Comenzi, personalități și recuperare
 
 Clienții grăbiți, nehotărâți și profesioniști au indicatoare distincte, cerințe explicite și răbdare diferită. Numărul și culoarea comenzii o urmăresc la punctul de lucru; comenzile colegilor trec vizual prin înregistrare, colectare, ambalare și facturare. O comandă incompletă eligibilă deschide o singură misiune de recuperare de 40 de secunde: completare cu Mihai, apoi predare clientului. Expirarea sau renunțarea închid cazul fără bucle.
+
+
+## Partidă cu zar — 29 octombrie 2026
+
+Interfața pornește 8 ture × 90 secunde active, 5 clienți/tură, cu rating și fonduri păstrate. Tutorialul inițial și dialogurile se adaugă duratei. Zarul alege prima variantă cu probabilitatea 4/6, iar celelalte două fețe aleg uniform dintre alternative. Rezultatul este confirmat explicit; remedierea rămâne manuală. 12% dintre clienți au așteptări foarte ridicate și cel mult 3,8 stele pentru rezolvare, fapt explicat în dialog. Validare: 24 grupe simulator și 27 bonus.
