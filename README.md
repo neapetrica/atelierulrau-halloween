@@ -25,6 +25,11 @@ WASD/săgeți, Shift pentru mers rapid, E pentru acțiune, P/Escape pentru pauz�
 
 Tot jocul, inclusiv bonusul, este în `index.html`; fără build, backend sau biblioteci externe. Copiile și sursele intermediare din `.review/` nu se publică.
 
-Teste locale: `node qa/simulator.test.cjs` și `node qa/game.test.cjs`. 14 grupe pentru simulator și 27 pentru bonus. Testele nu certifică FPS sau compatibilitatea pe toate telefoanele.
+Teste locale: `node qa/simulator.test.cjs` și `node qa/game.test.cjs`. 17 grupe pentru simulator și 27 pentru bonus. Testele nu certifică FPS sau compatibilitatea pe toate telefoanele.
 
 Simulare fictivă pentru divertisment. Nu reprezintă termene legale, politici comerciale, evaluări reale ale angajaților sau promisiuni de preț. Nu oferă premii/vouchere, nu contactează clienți și nu colectează date personale.
+
+
+## Claritate și tutorial — 29 octombrie 2026
+
+Prima misiune se învață fără cronometru sau sosiri de clienți. Obiectivul principal indică acțiunea și locul, iar următorul pas apare imediat după alegere. Recepția include numărarea cutiilor; verificările de comandă folosesc liste bifabile. Coletele transportate, livrările și răbdarea clienților sunt vizibile pe hartă. Solicitările apar progresiv, iar feedbackul explică modificarea ratingului.
