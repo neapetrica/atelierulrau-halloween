@@ -4,7 +4,17 @@ Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocu
 
 [JOC PUBLIC](https://neapetrica.github.io/atelierulrau-halloween/)
 
-## Tur de criză — modul implicit
+## Aventura unificată — modul implicit
+
+- 180 secunde active, într-un singur Canvas: pregătirea comenzii (28s), deciziile celor opt colegi (120s), finalul Client/Halloween (26s), bilanț (6s).
+- Cele trei mecanici sunt adaptate la ritmul scurt; variantele complete de explorare și bonus rămân opționale în meniu.
+- Pregătirea: mers pe hartă, recepționare, ambalare și predare. Deciziile păstrează zarul procentual. Greșelile scad bugetul inițial al actului Halloween.
+- Finalul: 3 scule, vânzători care consumă bugetul, bonus Mada, retur Mihai, factură obligatorie la Elena și ieșire. Rating comun, prag 4,3★.
+- Grafică originală 2.5D izometrică, personaje ilustrate, umbre, rafturi și transformare Halloween. Fără asset-uri sau dependențe externe.
+- WASD/săgeți, touch-to-move, D-pad și Space/Sprint. Butonul obiectivului navighează și interacționează automat la destinație.
+- Rata de 35,28% de mai jos aparține modului anterior; noua rată depinde și de deplasare și nu este o măsurătoare pe utilizatori.
+
+## Tur de criză — versiunea anterioară
 
 - Exact 180 de secunde active: introducere 8s, opt roluri × 19s, recuperare 14s, final cinematic 6s. Pauza și ascunderea paginii opresc timpul.
 - Două decizii per rol, cu selecție tactilă sau tastele 1/2/3; zar procentual cu șanse vizibile de 78/64/48%. Recuperare 82/62/40%.
