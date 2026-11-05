@@ -4,6 +4,14 @@ Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocu
 
 [JOC PUBLIC](https://neapetrica.github.io/atelierulrau-halloween/)
 
+## Reparații și verificări — 5 noiembrie 2026
+
+- Victoria necesită rating minimum 4,3★, trei scule, factură, ieșire și buget pozitiv. Bugetul epuizat oprește etapa clientului și duce la un final pierdut.
+- Patrule pe trasee accesibile, verificare individuală a celor trei produse la recepție, cameră mobilă apropiată cu hartă completă opțională, mobilier cu valize și mânere.
+- Probabilități afișate: 80% / 66% / 50%. O decizie nereușită consumă 0,35★; o reușită adaugă 0,055★. Norocul nu înlocuiește cerințele de checkout.
+- Sursele active sunt în `src/`; construirea: `python tools/build-game.py`. Arhiva `game-sources.zip` include sursele, scriptul și testele. Jocul public rămâne un singur `index.html`.
+- Teste: `node qa/campaign.test.cjs`, `node qa/simulator.test.cjs`, `node qa/game.test.cjs`. Calibrare reproductibilă: `node qa/campaign-calibration.cjs`.
+
 ## Aventura unificată — modul implicit
 
 - 180 secunde active, într-un singur Canvas: pregătirea comenzii (28s), deciziile celor opt colegi (120s), finalul Client/Halloween (26s), bilanț (6s).
