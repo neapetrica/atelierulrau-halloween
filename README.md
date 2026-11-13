@@ -1,3 +1,11 @@
+## Versiunea de explorare — 13 noiembrie 2026
+
+Campania principală are acum showroom și depozit conectate, nouă sarcini prin opt roluri și final Halloween pe aceeași hartă. Limita este de 180 secunde active; dialogurile și pauza opresc timpul. Prima deplasare pornește tura. Butonul de destinație conduce jucătorul; o nouă apăsare la destinație execută acțiunea. Tap/WASD/săgeți pentru mers, E pentru interacțiune, Space pentru sprint.
+
+Build: `python tools/build-game.py`. Teste actuale: `node qa/campaign.test.cjs`, `node qa/simulator.test.cjs`, `node qa/game.test.cjs`. Calibrarea istorică de 32,9% nu se aplică noii variante. Ruta automată optimă durează aproximativ 34 secunde, fără citire sau explorare; durata și dificultatea umană trebuie testate. Meniul public are un singur buton: Începe jocul. Variantele istorice nu sunt opțiuni în meniul principal. Verificarea vizuală automată a fost blocată de politica browserului pentru file://.
+
+Materialele de mai jos descriu și versiuni istorice.
+
 # AtelierulTău — O zi în echipă
 
 Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocul anterior AtelierulRău Halloween rămâne disponibil ca bonus „Client”, inclus în același `index.html`.
