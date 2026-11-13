@@ -1,80 +1,13 @@
-## Versiunea de explorare — 13 noiembrie 2026
+# AtelierulRău.ro — Halloween Edition
 
-Campania principală are acum showroom și depozit conectate, nouă sarcini prin opt roluri și final Halloween pe aceeași hartă. Limita este de 180 secunde active; dialogurile și pauza opresc timpul. Prima deplasare pornește tura. Butonul de destinație conduce jucătorul; o nouă apăsare la destinație execută acțiunea. Tap/WASD/săgeți pentru mers, E pentru interacțiune, Space pentru sprint.
+Un singur joc: ești CLIENTUL, alegi un eveniment și un proiect, explorezi showroomul și depozitul, colectezi trei scule și obții factura de la Elena înainte de ieșire. Pierzi dacă bugetul ajunge la zero. Nu există roluri de angajat, rating de firmă sau cronometru de trei minute. Timpul afișat este durata partidei.
 
-Build: `python tools/build-game.py`. Teste actuale: `node qa/campaign.test.cjs`, `node qa/simulator.test.cjs`, `node qa/game.test.cjs`. Calibrarea istorică de 32,9% nu se aplică noii variante. Ruta automată optimă durează aproximativ 34 secunde, fără citire sau explorare; durata și dificultatea umană trebuie testate. Meniul public are un singur buton: Începe jocul. Variantele istorice nu sunt opțiuni în meniul principal. Verificarea vizuală automată a fost blocată de politica browserului pentru file://.
+Depozitul se află deasupra showroomului, cu trecere în dreapta-sus, rafturi, ambalare și biroul lui Sebi. Două scule ale proiectului sunt în depozit, una în showroom. WC-ul și separeul închis rămân mobilier inaccesibil conform schiței.
 
-Materialele de mai jos descriu și versiuni istorice.
+## Pornire și controale
+Deschide `index.html` local sau pe GitHub Pages. WASD/săgeți ori D-pad pentru mers; tap/click pe culoare pentru traseu; Space/DASH pentru sprint. Butonul Hartă comută între camera apropiată și planul complet. Dialogurile, coșul și pauza păstrează mecanicile originalului.
 
-# AtelierulTău — O zi în echipă
+## Surse și verificare
+Sursa activă: `src/client-game.html`. Build: `python tools/build-game.py`. Teste: `node qa/game.test.cjs` (31 grupuri, inclusiv accesul în depozit, camere, coliziuni, retur, checkout și Game Over). Testele nu înlocuiesc verificarea pe telefoane reale.
 
-Simulator arcade al firmei, cu showroom și depozit după schița extinsă. Jocul anterior AtelierulRău Halloween rămâne disponibil ca bonus „Client”, inclus în același `index.html`.
-
-[JOC PUBLIC](https://neapetrica.github.io/atelierulrau-halloween/)
-
-## Reparații și verificări — 5 noiembrie 2026
-
-- Victoria necesită rating minimum 4,3★, trei scule, factură, ieșire și buget pozitiv. Bugetul epuizat oprește etapa clientului și duce la un final pierdut.
-- Patrule pe trasee accesibile, verificare individuală a celor trei produse la recepție, cameră mobilă apropiată cu hartă completă opțională, mobilier cu valize și mânere.
-- Probabilități afișate: 80% / 66% / 50%. O decizie nereușită consumă 0,35★; o reușită adaugă 0,055★. Norocul nu înlocuiește cerințele de checkout.
-- Sursele active sunt în `src/`; construirea: `python tools/build-game.py`. Arhiva `game-sources.zip` include sursele, scriptul și testele. Jocul public rămâne un singur `index.html`.
-- Teste: `node qa/campaign.test.cjs`, `node qa/simulator.test.cjs`, `node qa/game.test.cjs`. Calibrare reproductibilă: `node qa/campaign-calibration.cjs`.
-
-## Aventura unificată — modul implicit
-
-- 180 secunde active, într-un singur Canvas: pregătirea comenzii (28s), deciziile celor opt colegi (120s), finalul Client/Halloween (26s), bilanț (6s).
-- Cele trei mecanici sunt adaptate la ritmul scurt; variantele complete de explorare și bonus rămân opționale în meniu.
-- Pregătirea: mers pe hartă, recepționare, ambalare și predare. Deciziile păstrează zarul procentual. Greșelile scad bugetul inițial al actului Halloween.
-- Finalul: 3 scule, vânzători care consumă bugetul, bonus Mada, retur Mihai, factură obligatorie la Elena și ieșire. Rating comun, prag 4,3★.
-- Grafică originală 2.5D izometrică, personaje ilustrate, umbre, rafturi și transformare Halloween. Fără asset-uri sau dependențe externe.
-- WASD/săgeți, touch-to-move, D-pad și Space/Sprint. Butonul obiectivului navighează și interacționează automat la destinație.
-- Rata de 35,28% de mai jos aparține modului anterior; noua rată depinde și de deplasare și nu este o măsurătoare pe utilizatori.
-
-## Tur de criză — versiunea anterioară
-
-- Exact 180 de secunde active: introducere 8s, opt roluri × 19s, recuperare 14s, final cinematic 6s. Pauza și ascunderea paginii opresc timpul.
-- Două decizii per rol, cu selecție tactilă sau tastele 1/2/3; zar procentual cu șanse vizibile de 78/64/48%. Recuperare 82/62/40%.
-- O comandă urgentă traversează aprovizionarea, recepția, vânzarea, telefonul/WhatsApp, coletarea, suportul, escaladarea și factura.
-- Rating inițial 4,70★; reușită +0,055★, eșec −0,30★, timp expirat −0,08★, recuperare +0,30★ sau −0,06★. Câștig la minimum 4,3★ după toate scenele.
-- Calibrare: 10.000 partide cu alegeri mixte 50%/35%/15% și cea mai bună recuperare: 35,28% victorii. Cele mai bune alegeri constant: 68,65%. Acestea sunt simulări, nu garanții pentru jucători.
-- Explorarea liberă și bonusul Client rămân accesibile din meniu.
-
-## Explorare liberă — modul lung
-
-- Opt colegi jucabili: Cristi, George, Vlad, Andrei, Mihai, Eugen, Sebi și Elena. Rolurile sunt atribuite aleatoriu, fără repetare până la epuizarea grupului în sesiunea curentă.
-- O partidă are 8 ture de câte 90 secunde active, cu 5 clienți pe tură (40 în total). Colegii automatizați procesează o parte dintre cereri; jucătorul primește solicitări pe rol.
-- Rezolvă personal minimum o misiune pe tură, păstrează ratingul de minimum 4,3 din 5 stele și fonduri suficiente pentru costurile zilei.
-- Rating mediu calculat din recenzii. Sub 4,3★: alertă comună ; în campania scurtă poți recupera și în rolurile următoare. Recenziile sunt solicitate doar după rezolvări bune, fără recompense.
-- Depozit: recepție, numărare, diferențe cu Elena, stocare, căutare cu Mihai, coletare și predare.
-- Vânzări: showroom, telefon, WhatsApp, înregistrarea și transmiterea obligatorie a comenzii.
-- Support: retururi, tichete, găsirea produselor și escaladări. Termenele de 30 de zile sunt comprimate explicit în timpul jocului.
-- Eugen: oferte mari, verificări și sprijin pentru vânzări. Mihai și Eugen au scenete fictive de deghizare, cu risc de pierdere a încrederii.
-- Sebi: furnizori, costuri, prețuri, stoc, avertizări și suspendări temporare care reduc capacitatea echipei.
-- Elena: facturi și diferențe de recepție.
-
-## Controale
-
-WASD/săgeți, Shift pentru mers rapid, E pentru acțiune, P/Escape pentru pauză. Pe mobil: D-pad, tap pe culoar, mers rapid și butoane mari. „Mergi la destinație” găsește un traseu; decizia se ia la punctul de lucru. Butonul Hartă schimbă între ansamblu și urmărirea jucătorului pe mobil.
-
-## Distribuire și validare
-
-Tot jocul, inclusiv bonusul, este în `index.html`; fără build, backend sau biblioteci externe. Copiile și sursele intermediare din `.review/` nu se publică.
-
-Teste locale: `node qa/simulator.test.cjs` și `node qa/game.test.cjs`. 24 grupe pentru simulator și 27 pentru bonus. Testele nu certifică FPS sau compatibilitatea pe toate telefoanele.
-
-Simulare fictivă pentru divertisment. Nu reprezintă termene legale, politici comerciale, evaluări reale ale angajaților sau promisiuni de preț. Nu oferă premii/vouchere, nu contactează clienți și nu colectează date personale.
-
-
-## Claritate și tutorial — 29 octombrie 2026
-
-Prima misiune se învață fără cronometru sau sosiri de clienți. Obiectivul principal indică acțiunea și locul, iar următorul pas apare imediat după alegere. Recepția include numărarea cutiilor; verificările de comandă folosesc liste bifabile. Coletele transportate, livrările și răbdarea clienților sunt vizibile pe hartă. Solicitările apar progresiv, iar feedbackul explică modificarea ratingului.
-
-
-## Comenzi, personalități și recuperare
-
-Clienții grăbiți, nehotărâți și profesioniști au indicatoare distincte, cerințe explicite și răbdare diferită. Numărul și culoarea comenzii o urmăresc la punctul de lucru; comenzile colegilor trec vizual prin înregistrare, colectare, ambalare și facturare. O comandă incompletă eligibilă deschide o singură misiune de recuperare de 40 de secunde: completare cu Mihai, apoi predare clientului. Expirarea sau renunțarea închid cazul fără bucle.
-
-
-## Partidă cu zar — 29 octombrie 2026
-
-Interfața pornește 8 ture × 90 secunde active, 5 clienți/tură, cu rating și fonduri păstrate. Tutorialul inițial și dialogurile se adaugă duratei. Zarul alege prima variantă cu probabilitatea 4/6, iar celelalte două fețe aleg uniform dintre alternative. Rezultatul este confirmat explicit; remedierea rămâne manuală. 12% dintre clienți au așteptări foarte ridicate și cel mult 3,8 stele pentru rezolvare, fapt explicat în dialog. Validare: 24 grupe simulator și 27 bonus.
+Fișierele simulatorului și campaniilor anterioare sunt păstrate ca istoric, dar nu sunt incluse în jocul public. `game-sources.zip` conține numai sursa și testele jocului client.
